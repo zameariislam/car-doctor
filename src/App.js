@@ -8,6 +8,7 @@ import Header from './Shared/Header/Header';
 import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
 import NotFound from './Shared/NotFound/NotFound';
 import Login from './Pages/Login/Login/Login';
+import Register from './Pages/Login/Register/Register';
 
 
 
@@ -25,6 +26,8 @@ function App() {
         </Route>
         <Route path='/about' element={<About/>}></Route>
         <Route   path='/login' element={<Login/>} />
+        <Route path='/register' element={<Register/>}
+         />
         
         <Route path='*' element={<NotFound/>} />
       </Routes>
