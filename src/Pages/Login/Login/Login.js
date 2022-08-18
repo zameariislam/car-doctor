@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import {  useNavigate} from 'react-router-dom';
+import {  useNavigate,Link} from 'react-router-dom';
 
 const Login = () => {
     let navigate = useNavigate();
@@ -43,7 +43,7 @@ const Login = () => {
                 </Button>
             </Form>
 
-            <p>New to Car doctor? <span onClick={navigateRegister} className='text-danger'>Please Register</span> </p>
+            <p>New to Car doctor? <Link  className='text-decoration-none text-danger' to='/register'>Please Register</Link> </p>
         </div>
     );
 };
