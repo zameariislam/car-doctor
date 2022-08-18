@@ -6,11 +6,14 @@ import auth from '../../../firebase.init';
 
 import SocialLogin from '../SocialLogin/SocialLogin';
 
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendEmailVerification, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 
 
 
 const Login = () => {
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth );
+
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const navigate = useNavigate();
@@ -48,6 +51,14 @@ const Login = () => {
     const navigateRegister = event => {
         navigate('/register');
     }
+    const resetPassword=async()=>{
+        const email = emailRef.current.value;
+       
+            await sendPasswordResetEmail(email);
+            alert('Sent email');
+        
+
+    }
 
    
 
@@ -66,7 +77,10 @@ const Login = () => {
                 </Button>
             </Form>
             {errorElement}
-            <p>New to Genius Car? <Link to="/register" className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>Please Register</Link> </p>
+            <p>New to Genius Car? <Link to="/register"
+             className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>Please Register</Link> </p>
+             <p>Forget Password? <Link to="/register"
+             className='text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</Link> </p>
            
             <SocialLogin></SocialLogin>
             
