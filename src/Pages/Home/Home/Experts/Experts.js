@@ -25,8 +25,8 @@ const Experts = () => {
             <div className='row'>
                 {
 
-                    experts.map((expert)=><Expert expert={expert}  key={expert.id}/>)
-                   
+                    experts.map((expert) => <Expert expert={expert} key={expert.id} />)
+
                 }
 
             </div>

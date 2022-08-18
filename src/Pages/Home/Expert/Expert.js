@@ -4,8 +4,8 @@ const Expert = ({expert}) => {
     const{name,img}=expert
     return (
 
-
-        <div class="card  col-12-sm col-md-6 col-lg-4 " style={{width: "18rem"}}>
+        <div className=' g-5 col-12-sm col-md-6 col-lg-4'>
+            <div class="card  " style={{width: "18rem"}}>
         <img src={img} class="card-img-top" alt="..."/>
         <div class="card-body">
           <h5 class="card-title">{name}</h5>
@@ -13,6 +13,10 @@ const Expert = ({expert}) => {
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
+        </div>
+
+
+        
         
 
     );
